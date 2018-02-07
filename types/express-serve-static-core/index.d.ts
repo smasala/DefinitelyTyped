@@ -459,7 +459,10 @@ export interface MediaType {
     subtype: string;
 }
 
-export type Send = (body?: any) => Response;
+export interface Send {
+    (body?: any): Response;
+    (...any: any[]): Response;
+}
 
 export interface Response extends http.ServerResponse, Express.Response {
     /**
